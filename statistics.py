@@ -1,10 +1,31 @@
-num_friends = [100.0,49,41,40,25,21,21,19,19,18,18,16,15,15,15,15,14,14,13,13,13,13,12,12,11,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+# Code based on Data Science from Scratch
+# with corrections for Scripps College
+# DS002, Spring 2022
+# Professor Douglas Goodwin
 
+# # # # # # # # # # # # # # # # # # # # # # # #
+# Imports
+# # # # # # # # # # # # # # # # # # # # # # # #
+
+# python imports
 from collections import Counter
+from typing import List
+import math
+
+# local code imports
+from .linear_algebra import sum_of_squares
+from .linear_algebra import dot
+
+# other imports
 import matplotlib.pyplot as plt
 
-from ksoltani23.linear_algebra import sum_of_squares
-from ksoltani23.linear_algebra import dot
+# # # # # # # # # # # # # # # # # # # # # # # #
+# Let's go!
+# # # # # # # # # # # # # # # # # # # # # # # #
+
+
+num_friends = [100.0,49,41,40,25,21,21,19,19,18,18,16,15,15,15,15,14,14,13,13,13,13,12,12,11,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+
 
 friend_counts = Counter(num_friends)
 xs = range(101)                         # largest value is 100
@@ -39,7 +60,7 @@ assert second_smallest_value == 1
 assert second_largest_value == 49
 
 
-from typing import List
+
 
 def mean(xs: List[float]) -> float:
     return sum(xs) / len(xs)
@@ -114,7 +135,6 @@ def variance(xs: List[float]) -> float:
 
 assert 81.54 < variance(num_friends) < 81.55
 
-import math
 
 def standard_deviation(xs: List[float]) -> float:
     """The standard deviation is the square root of the variance"""
